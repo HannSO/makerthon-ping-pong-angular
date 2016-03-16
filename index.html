@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang ="en" ng-app="PingPongLeaderboard">
+  <head>
+    <meta charset ="utf-8">
+    <title>Makers' Leaderboard</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/submitResultsController.js"></script>
+  </head>
+
+  <body>
+    <section ng-controller="SubmitResultsController as resultsCtrl">
+      <form class="player-entries">
+        <label for="winner">Winner:</label>
+        <input id="winner" type = "text" ng-model="resultsCtrl.winner">
+        <label for="loser">Loser:</label>
+        <input id="loser" type = "text" ng-model="resultsCtrl.loser">
+        <button class="submit" ng-click="resultsCtrl.submitResults()">Submit Result</button>
+      </form>
+      <p ng-show="resultsCtrl.confirmation">Results have been sent!<p>
+    </section>
+
+    <section class="Leaderboard">
+    </section>
+  </body>
+
+
+
+</html>
