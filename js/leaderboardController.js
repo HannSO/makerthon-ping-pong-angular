@@ -7,7 +7,7 @@ pingPongLeaderboard.controller('LeaderboardController', ['$resource',function($r
   self.retrievePlayers = function(){
 
     showPlayersPath.get().$promise.then(function(data){
-      self.players = data;
+      self.players = data.players;
     });
   };
 }]);
