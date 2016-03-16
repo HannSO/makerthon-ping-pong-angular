@@ -19,7 +19,7 @@ describe('SubmitResultsController', function(){
 
     httpBackend
       .when('POST', 'http://localhost:3000/games/new',{
-        winner: '@hannso'
+        winner: '@hannso',
         loser: '@zeshan'
       })
       .respond({

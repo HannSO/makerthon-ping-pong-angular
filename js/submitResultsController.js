@@ -1,19 +1,26 @@
-pingPongLeaderboard.controller('SubmitResultsController', ['$resource',function(){
+pingPongLeaderboard.controller('SubmitResultsController', ['$http',function($http){
  var self = this;
 self.winner = null;
 self.loser = null;
-self.confirmation = null;
+self.confirmation = false;
+self.unconfirmation = false;
 
-var makeGamePath = $resource('http://localhost:3000/games/new');
+var makeGamePath = ('http://localhost:3000/games/new');
 
 
   self.submitResults = function(){
 
-    makeGamePath.post(JSON.stringify({winner:self.winner,loser:self.loser})).success(function(){
-      self.confirmation = true;
+    $http.post(makeGamePath, JSON.stringify({winner:self.winner,loser:self.loser}))
+
+    .success(function(){
       // UPDATE LEADERBOARD METHOD
+      // self.confirmation = true;
 
     });
+    // 
+    // .error(function(){
+    //   self.unconfirmation = true;
+    // });
   };
 
 }]);
