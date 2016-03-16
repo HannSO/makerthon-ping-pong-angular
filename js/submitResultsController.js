@@ -17,7 +17,7 @@ var makeGamePath = ('http://localhost:3000/games/new');
       // self.confirmation = true;
 
     });
-    // 
+    //
     // .error(function(){
     //   self.unconfirmation = true;
     // });
