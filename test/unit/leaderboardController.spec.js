@@ -14,7 +14,7 @@ describe('LeaderboardController', function(){
     beforeEach(inject(function($httpBackend){
       httpBackend = $httpBackend;
       httpBackend
-      .when("GET", "http://localhost:3000/players")
+      .when("GET", "http://localhost:3000/")
       .respond(
         { players: "Players listed"}
       );
@@ -23,7 +23,7 @@ describe('LeaderboardController', function(){
     it('displays players', function(){
       ctrl.retrievePlayers();
       httpBackend.flush();
-      expect(ctrl.players).toEqual('Players listed');
+      expect(ctrl.players.players).toEqual('Players listed');
     });
   });
 });

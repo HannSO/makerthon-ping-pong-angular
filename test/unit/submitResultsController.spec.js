@@ -15,19 +15,23 @@ describe('SubmitResultsController', function(){
 
   describe('sending posts', function(){
 
-
-    beforeEach(inject(function($http){
+    var $httpBackend;
+    beforeEach(inject(function($httpBackend){
       var $scope = {};
-      var httpBackend = $httpBackend;
+      // var httpBackend = $httpBackend;
 
 
-      httpBackend
+      $httpBackend
       .when('POST', 'http://localhost:3000/games/new',{winner: '@hannso', loser: '@zeshan'})
       .respond(
-        {message : 'Hannah won has been sent'}
+        {ctrl.confirmation = true}
         );
       }));
-        httpBackend.flush();
-        expect(ctrl.confirmation_message).toEqual('Hannah won has been sent');
+
+      it('sends a confirmation message', function(){
+        // $httpBackend.flush();
+        expect(ctrl.confirmation).toBe(true);
+
+      });
       });
     });
