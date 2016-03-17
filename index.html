@@ -20,7 +20,7 @@
         <input id="winner" type = "text" ng-model="resultsCtrl.winner">
         <label for="loser">Loser:</label>
         <input id="loser" type = "text" ng-model="resultsCtrl.loser">
-        <button id="submit-game" ng-click="resultsCtrl.submitResults()" ng-click="leadCtrl.retrievePlayers()">Submit Result</button>
+        <button id="submit-game" ng-click="resultsCtrl.submitResults(); leadCtrl.retrievePlayers()">Submit Result</button>
       </form>
       <p id="confirmation-message" ng-show="resultsCtrl.confirmation">Results have been sent!<p>
       <p id="un-confirmation-message" ng-show="resultsCtrl.unconfirmation">
@@ -38,7 +38,4 @@
       </ul>
     </section>
   </body>
-
-
-
 </html>
