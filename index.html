@@ -22,10 +22,10 @@
         <input id="winner" type = "text" ng-model="resultsCtrl.winner">
         <label for="loser">Loser:</label>
         <input id="loser" type = "text" ng-model="resultsCtrl.loser">
-        <button class="submit" ng-click="resultsCtrl.submitResults()">Submit Result</button>
+        <button id="submit-game" ng-click="resultsCtrl.submitResults()">Submit Result</button>
       </form>
-      <p ng-show="resultsCtrl.confirmation">Results have been sent!<p>
-      <p ng-show="resultsCtrl.unconfirmation">
+      <p id="confirmation" ng-show="resultsCtrl.confirmation">Results have been sent!<p>
+      <p id="un-confirmation" ng-show="resultsCtrl.unconfirmation">
         Results have NOT been sent!
       </p>
     </section>
