@@ -1,13 +1,14 @@
-pingPongLeaderboard.controller('LeaderboardController', ['$resource',function($resource){
+pingPongLeaderboard.controller('LeaderboardController', ['$http',function($http){
   var self = this;
 
 
-  var showPlayersPath = $resource('http://localhost:3000/players');
+  // var showPlayersPath = $resource('http://localhost:3000/');
   var players = [];
+
   self.retrievePlayers = function(){
 
-    showPlayersPath.get().$promise.then(function(data){
-      self.players = data.players;
+    $http.get('http://localhost:3000/').success(function(json){
+      self.players = json;
     });
   };
 }]);

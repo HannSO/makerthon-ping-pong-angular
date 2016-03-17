@@ -29,6 +29,9 @@
     </section>
 
     <section class="Leaderboard" ng-controller="LeaderboardController as leadCtrl">
+      <form class="players-load">
+        <button class="submit" ng-click="leadCtrl.retrievePlayers()">Update Leaderboard</button>
+      </form>
       <ul class ="list-players">
         <li class="player" ng-repeat = "player in leadCtrl.players">
           <p>
