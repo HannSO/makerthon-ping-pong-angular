@@ -54,7 +54,12 @@ h1 {
   border-radius: 25px;
   text-align: center;
 }
-
+p {
+  text-align: center;
+  font-color: black;
+  font-size: 51px;
+  font-weight: bolder;
+}
 .leadboard {
   margin:auto;
   display:block;
