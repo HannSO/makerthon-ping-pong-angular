@@ -10,7 +10,14 @@ var makeGamePath = ('http://localhost:3000/games');
 
   self.submitResults = function(){
 
-    $http.post(makeGamePath, {winner:self.winner,loser:self.loser});
+    $http.post(makeGamePath, {winner:self.winner,loser:self.loser})
+      .success(function (data) {
+        self.confirmation = true;
+      })
+      .error(function() {
+        self.unconfirmation = true;
+        self.confirmation = false;
+      });
 
   };
 
