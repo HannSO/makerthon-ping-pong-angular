@@ -2,9 +2,11 @@ describe('SubmitResultsController', function(){
   beforeEach(module('PingPongLeaderboard'));
 
   var ctrl;
+  var scope;
 
-  beforeEach(inject(function($controller){
+  beforeEach(inject(function($controller, $rootScope){
     ctrl = $controller('SubmitResultsController');
+    scope = $rootScope;
   }));
 
   it('initialises without a loser or winner', function(){
@@ -15,23 +17,21 @@ describe('SubmitResultsController', function(){
 
   describe('sending posts', function(){
 
-    var $httpBackend;
+    var httpBackend;
     beforeEach(inject(function($httpBackend){
-      var $scope = {};
-      // var httpBackend = $httpBackend;
-
-
+      httpBackend = $httpBackend;
       $httpBackend
-      .when('POST', 'http://localhost:3000/games/new',{winner: '@hannso', loser: '@zeshan'})
-      .respond(
-        {ctrl.confirmation = true}
-        );
-      }));
-
-      it('sends a confirmation message', function(){
-        // $httpBackend.flush();
-        expect(ctrl.confirmation).toBe(true);
-
+      .when('POST', 'http://localhost:3000/games')
+      .respond(function(){
+        return [200, {}];
       });
-      });
+    }));
+
+    it('sets confirmation to true', function(){
+      ctrl.submitResults();
+      httpBackend.flush();
+      scope.$apply();
+      expect(ctrl.confirmation).toBe(true);
     });
+  });
+});
