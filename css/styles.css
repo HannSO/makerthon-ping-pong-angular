@@ -1,18 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
 body {
-<<<<<<< HEAD
   background: url('pingpong.png');
-  /*background-size: 100%;*/
-  /*background-size: 100%;*/
-=======
-  background-image:  url('pingpong.png');
->>>>>>> df756dfdb9c4fd917c00a9d2abdf1bccd0635d66
-  /*background-size: 100%;*/
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size:250%;
   line-height: 1;
-  /*color: #616161;*/
   padding: 35px 0;
   align-items: center;
   font-color: black;
@@ -34,10 +26,7 @@ h1 {
   margin-bottom:50px;
   text-align: center;
   width: 100%;
-<<<<<<< HEAD
   font-weight: bolder;
-=======
->>>>>>> df756dfdb9c4fd917c00a9d2abdf1bccd0635d66
 }
 
 .player-entries {
@@ -71,16 +60,9 @@ p {
   font-weight: bolder;
 }
 .leadboard {
-<<<<<<< HEAD
   margin: auto;
   margin-top: 75px;
   display:block;
-  /*background-color: rgba(255, 255, 255, 0.6);*/
-=======
-  margin:auto;
-  display:block;
-  background-color: white;
->>>>>>> df756dfdb9c4fd917c00a9d2abdf1bccd0635d66
   width: 50%;
 }
 
