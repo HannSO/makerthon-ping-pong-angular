@@ -19,9 +19,9 @@
     <section ng-controller="SubmitResultsController as resultsCtrl">
       <form class="player-entries">
         <label for="winner">Winner:</label>
-        <input id="winner" type = "text" ng-model="resultsCtrl.winner">
+        <input id="winner" type = "text" ng-model="resultsCtrl.winner" placeholder="Enter winner here">
         <label for="loser">Loser:</label>
-        <input id="loser" type = "text" ng-model="resultsCtrl.loser">
+        <input id="loser" type = "text" ng-model="resultsCtrl.loser" placeholder="Enter loser here">
         <button id="submit-game" class="submit" ng-click="resultsCtrl.submitResults()">Submit Result</button>
       </form>
       <p id="confirmation" ng-show="resultsCtrl.confirmation">Results have been sent!<p>

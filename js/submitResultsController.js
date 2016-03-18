@@ -13,6 +13,8 @@ var makeGamePath = ('http://localhost:3000/games');
       .success(function (data) {
         self.confirmation = true;
         self.unconfirmation = false;
+        self.winner = '';
+        self.loser = '';
       })
       .error(function() {
         self.unconfirmation = true;
