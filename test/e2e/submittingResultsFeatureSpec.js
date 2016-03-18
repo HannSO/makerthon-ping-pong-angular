@@ -7,8 +7,8 @@ describe("pingPongLeaderboard", function(){
     winner.sendKeys('Hannah');
     loser.sendKeys('Zee');
     submit.click();
-    expect(element('#confirmation').isDisplayed()).toBe(true);
-    expect(element('#un-confirmation').isDisplayed()).toBe(false);
+    expect($('#confirmation').isDisplayed()).toBe(true);
+    expect($('#un-confirmation').isDisplayed()).toBe(false);
   });
 
 });
