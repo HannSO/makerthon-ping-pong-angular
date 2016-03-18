@@ -4,11 +4,10 @@ describe("pingPongLeaderboard", function(){
     var winner = element(by.model('resultsCtrl.winner'));
     var loser = element(by.model('resultsCtrl.loser'));
     var submit = $('#submit-game');
-    winner.sendKeys('Hannah');
-    loser.sendKeys('Zee');
+    winner.sendKeys('Scott');
+    loser.sendKeys('Hannah');
     submit.click();
     expect($('#confirmation').isDisplayed()).toBe(true);
     expect($('#un-confirmation').isDisplayed()).toBe(false);
   });
-
 });

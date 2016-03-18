@@ -34,16 +34,8 @@
       <div class="leadboard">
 
         <form class="players-load">
-          <button class="submit" ng-click="leadCtrl.retrievePlayers()">Update Leaderboard</button>
+          <button id="submit-leaderboard" class="submit" ng-click="leadCtrl.retrievePlayers()">Update Leaderboard</button>
         </form>
-        <!-- <ul class ="list-players">
-          <li class="player" ng-repeat = "player in leadCtrl.players">
-            <p class="player-details">
-              {{player.name}} {{player.wins}} {{player.losses}} {{player.win_percentage}}%
-            </p>
-          </li>
-        </ul> -->
-
 
         <table class="leaderboard-table">
           <tr>
@@ -61,11 +53,10 @@
             </th>
           </tr>
           <tr ng-repeat="player in leadCtrl.players">
-            <td>{{ player.name }}</td>
-
-            <td>{{ player.wins }}</td>
-            <td>{{ player.losses }}</td>
-            <td>{{ player.win_percentage }}</td>
+            <td id="name"> {{ player.name }}</td>
+            <td id="wins">{{ player.wins }}</td>
+            <td id="losses">{{ player.losses }}</td>
+            <td id="win-percentage">{{ player.win_percentage }}</td>
           </tr>
         </table>
       </div>
