@@ -17,6 +17,7 @@ describe('SubmitResultsController', function(){
 
   describe('sending posts', function(){
 
+<<<<<<< HEAD
     var httpBackend;
     beforeEach(inject(function($httpBackend){
       httpBackend = $httpBackend;
@@ -24,6 +25,26 @@ describe('SubmitResultsController', function(){
       .when('POST', 'http://localhost:3000/games')
       .respond(function(){
         return [200, {}];
+=======
+    var $httpBackend;
+    beforeEach(inject(function($httpBackend){
+      var $scope = {};
+      // var httpBackend = $httpBackend;
+
+
+      $httpBackend
+      .when('POST', 'http://localhost:3000/games/new',{winner: '@hannso', loser: '@zeshan'})
+      .respond(
+        {ctrl.confirmation = true}
+        );
+      }));
+
+      it('sends a confirmation message', function(){
+        // $httpBackend.flush();
+        expect(ctrl.confirmation).toBe(true);
+
+      });
+>>>>>>> df756dfdb9c4fd917c00a9d2abdf1bccd0635d66
       });
     }));
 

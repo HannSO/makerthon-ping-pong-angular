@@ -22,10 +22,10 @@
         <input id="winner" type = "text" ng-model="resultsCtrl.winner">
         <label for="loser">Loser:</label>
         <input id="loser" type = "text" ng-model="resultsCtrl.loser">
-        <button class="submit" ng-click="resultsCtrl.submitResults()">Submit Result</button>
+        <button id="submit-game" ng-click="resultsCtrl.submitResults()">Submit Result</button>
       </form>
-      <p ng-show="resultsCtrl.confirmation">Results have been sent!<p>
-      <p ng-show="resultsCtrl.unconfirmation">
+      <p id="confirmation" ng-show="resultsCtrl.confirmation">Results have been sent!<p>
+      <p id="un-confirmation" ng-show="resultsCtrl.unconfirmation">
         Results have NOT been sent!
       </p>
     </section>
@@ -34,16 +34,9 @@
       <div class="leadboard">
 
         <form class="players-load">
-          <button class="submit" ng-click="leadCtrl.retrievePlayers()">Update Leaderboard</button>
-        </form>
-        <!-- <ul class ="list-players">
-          <li class="player" ng-repeat = "player in leadCtrl.players">
-            <p class="player-details">
-              {{player.name}} {{player.wins}} {{player.losses}} {{player.win_percentage}}%
-            </p>
-          </li>
-        </ul> -->
 
+          <button id="submit-leaderboard" class="submit" ng-click="leadCtrl.retrievePlayers()">Update Leaderboard</button>
+        </form>
 
         <table class="leaderboard-table">
           <tr>
@@ -61,11 +54,12 @@
             </th>
           </tr>
           <tr ng-repeat="player in leadCtrl.players">
-            <td>{{ player.name }}</td>
 
-            <td>{{ player.wins }}</td>
-            <td>{{ player.losses }}</td>
-            <td>{{ player.win_percentage }}</td>
+            <td id="name"> {{ player.name }}</td>
+            <td id="wins">{{ player.wins }}</td>
+            <td id="losses">{{ player.losses }}</td>
+            <td id="win-percentage">{{ player.win_percentage }}</td>
+
           </tr>
         </table>
       </div>
